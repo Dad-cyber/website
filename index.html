@@ -487,234 +487,50 @@ body{
   .sponsor-grid{grid-template-columns:repeat(4,1fr)}
 }
 
-/* ── CONFIRMED SPEAKERS / MOVING PROFILE CARD SLIDER ── */
-.speakers-section{
-  max-width:1280px;
-  margin:0 auto;
-  padding:34px 3% 32px;
-  position:relative;
-}
+/* ── CONFIRMED SPEAKERS / UNIFORM 3–4 CARD SLIDER ── */
+.speakers-section{width:90%;max-width:none;margin:0 auto;padding:34px 0 32px;position:relative}
 .speakers-heading{text-align:center;margin-bottom:20px}
 .speakers-label{color:var(--cyan);font-size:15px;font-weight:650;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:6px}
 .speakers-heading h2{font-size:24px;line-height:1.1;color:#fff;margin-bottom:6px}
 .speakers-heading p{font-size:13px;color:var(--muted)}
-
-.speakers-slider{position:relative;padding:8px 42px 14px}
-.speakers-carousel-wrap{
-  width:100%;
-  overflow:hidden;
-  position:relative;
-  padding:18px 0 24px;
-}
-.speakers-carousel{
-  display:flex;
-  flex-wrap:nowrap;
-  align-items:center;
-  gap:16px;
-  width:max-content;
-  will-change:transform;
-  transition:transform .78s cubic-bezier(.22,.75,.2,1);
-}
-
-/* Every speaker is a complete card. */
-.speaker-item{
-  flex:0 0 170px;
-  width:170px;
-  min-height:220px;
-  text-align:center;
-  user-select:none;
-  cursor:pointer;
-  opacity:.62;
-  transform:scale(.86);
-  transform-origin:center center;
-  transition:
-    transform .78s cubic-bezier(.22,.75,.2,1),
-    opacity .78s ease,
-    filter .78s ease;
-  outline:none;
-  filter:saturate(.78);
-}
-.speaker-item.speaker-near{
-  opacity:.82;
-  transform:scale(.93);
-  filter:saturate(.92);
-}
-.speaker-item.speaker-center{
-  opacity:1;
-  transform:scale(1.10);
-  z-index:5;
-  filter:saturate(1.08);
-  cursor:pointer;
-}
-
-.speaker-card-inner{
-  width:100%;
-  min-height:220px;
-  padding:15px 11px 13px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:20px;
-  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-  box-shadow:0 10px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.05);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  transition:
-    background .78s ease,
-    border-color .78s ease,
-    box-shadow .78s ease;
-}
-.speaker-item:hover .speaker-card-inner{
-  border-color:rgba(255,210,145,.30);
-  background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035));
-}
-.speaker-center .speaker-card-inner{
-  min-height:242px;
-  padding:17px 13px 15px;
-  background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.045));
-  border-color:rgba(255,213,153,.42);
-  box-shadow:
-    0 20px 48px rgba(0,0,0,.32),
-    inset 0 1px 0 rgba(255,255,255,.12),
-    0 0 34px rgba(110,212,232,.10);
-}
-
-.speaker-photo-ring{
-  width:100px;height:100px;
-  flex:0 0 auto;
-  margin:0 auto 11px;
-  padding:3px;
-  border-radius:50%;
-  background:linear-gradient(135deg,rgba(255,184,100,.62),rgba(110,212,232,.55));
-  box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 24px rgba(0,0,0,.25);
-  transition:
-    width .78s cubic-bezier(.22,.75,.2,1),
-    height .78s cubic-bezier(.22,.75,.2,1),
-    padding .78s ease,
-    margin-bottom .78s ease,
-    background .78s ease,
-    box-shadow .78s ease;
-}
-.speaker-center .speaker-photo-ring{
-  width:130px;height:130px;
-  padding:5px;
-  margin-bottom:13px;
-  background:linear-gradient(135deg,#ffd18b,#6ed4e8);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.20),
-    0 14px 40px rgba(0,0,0,.35),
-    0 0 40px rgba(110,212,232,.18);
-}
-.speaker-photo{
-  width:100%;height:100%;display:block;
-  object-fit:cover;object-position:center;
-  border-radius:50%;
-  border:3px solid rgba(4,23,45,.92);
-  background:#102b43;
-}
-.speaker-name{
-  width:100%;
-  color:#fff;
-  font-size:10px;
-  font-weight:800;
-  line-height:1.25;
-  min-height:25px;
-  transition:font-size .78s ease,color .78s ease;
-}
-.speaker-center .speaker-name{font-size:14px;min-height:24px}
-.speaker-dept{
-  width:100%;
-  color:var(--cyan);
-  font-size:6.8px;
-  font-weight:700;
-  line-height:1.35;
-  margin-top:4px;
-  transition:font-size .78s ease,margin .78s ease;
-}
-.speaker-center .speaker-dept{font-size:8px;margin-top:5px}
-.speaker-college{
-  width:100%;
-  color:#d8e5ef;
-  font-size:7.2px;
-  font-weight:700;
-  line-height:1.3;
-  margin-top:5px;
-  min-height:18px;
-  transition:font-size .78s ease,margin .78s ease;
-}
-.speaker-country{
-  width:100%;
-  color:#ffd18b;
-  font-size:6.8px;
-  font-weight:800;
-  line-height:1.25;
-  margin-top:2px;
-  letter-spacing:.15px;
-  transition:font-size .78s ease,margin .78s ease;
-}
-.speaker-center .speaker-college{font-size:8.5px;margin-top:6px}
-.speaker-center .speaker-country{font-size:8px;margin-top:3px}
-
-.speaker-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:32px;height:32px;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:50%;
-  background:rgba(255,255,255,.07);
-  color:#fff;font-size:18px;line-height:1;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;z-index:8;
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  transition:.25s ease;
-}
-.speaker-arrow:hover{
-  background:rgba(255,166,75,.18);
-  border-color:rgba(255,210,145,.55);
-  color:#ffd18b;
-  transform:translateY(-50%) scale(1.08);
-}
+.speakers-slider{position:relative;padding:8px 0 14px}
+.speakers-carousel-wrap{width:100%;overflow:hidden;position:relative;padding:8px 0 12px}
+.speakers-carousel{display:flex;flex-wrap:nowrap;align-items:stretch;gap:16px;width:100%;will-change:transform;transition:transform .65s cubic-bezier(.22,.61,.36,1)}
+/* Every speaker card is identical. No center-card highlighting or scaling. */
+.speaker-item{flex:0 0 calc((100% - 48px)/4);width:calc((100% - 48px)/4);height:clamp(245px,22vw,315px);text-align:center;user-select:none;cursor:pointer;opacity:1;transform:none;outline:none;filter:none}
+.speaker-item.speaker-near,.speaker-item.speaker-center{opacity:1;transform:none;filter:none;z-index:auto}
+.speaker-card-inner{width:100%;height:100%;min-height:0;padding:clamp(14px,1.5vw,20px) clamp(10px,1.2vw,16px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;border:1px solid rgba(255,255,255,.15);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:0 10px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s ease,background .25s ease,box-shadow .25s ease}
+.speaker-item:hover .speaker-card-inner{border-color:rgba(255,210,145,.30);background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035))}
+.speaker-center .speaker-card-inner{min-height:0;padding:clamp(14px,1.5vw,20px) clamp(10px,1.2vw,16px);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border-color:rgba(255,255,255,.15);box-shadow:0 10px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.05)}
+.speaker-photo-ring{width:clamp(90px,8vw,125px);height:clamp(90px,8vw,125px);flex:0 0 auto;margin:0 auto clamp(10px,1vw,14px);padding:3px;border-radius:50%;background:linear-gradient(135deg,rgba(255,184,100,.62),rgba(110,212,232,.55));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 24px rgba(0,0,0,.25)}
+.speaker-center .speaker-photo-ring{width:clamp(90px,8vw,125px);height:clamp(90px,8vw,125px);padding:3px;margin-bottom:clamp(10px,1vw,14px);background:linear-gradient(135deg,rgba(255,184,100,.62),rgba(110,212,232,.55));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 24px rgba(0,0,0,.25)}
+.speaker-photo{width:100%;height:100%;display:block;object-fit:cover;object-position:center;border-radius:50%;border:3px solid rgba(4,23,45,.92);background:#102b43}
+.speaker-name{width:100%;color:#fff;font-size:clamp(10px,1vw,14px);font-weight:800;line-height:1.25;min-height:35px}
+.speaker-center .speaker-name{font-size:clamp(10px,1vw,14px);min-height:35px}
+.speaker-dept{width:100%;color:var(--cyan);font-size:clamp(7px,.62vw,9px);font-weight:700;line-height:1.35;margin-top:4px}
+.speaker-center .speaker-dept{font-size:clamp(7px,.62vw,9px);margin-top:4px}
+.speaker-college{width:100%;color:#d8e5ef;font-size:clamp(7px,.68vw,10px);font-weight:700;line-height:1.3;margin-top:5px;min-height:25px}
+.speaker-country{width:100%;color:#ffd18b;font-size:clamp(7px,.62vw,9px);font-weight:800;line-height:1.25;margin-top:3px;letter-spacing:.15px}
+.speaker-center .speaker-college{font-size:clamp(7px,.68vw,10px);margin-top:5px}
+.speaker-center .speaker-country{font-size:clamp(7px,.62vw,9px);margin-top:3px}
+.speaker-arrow{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:rgba(255,255,255,.07);color:#fff;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:8;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.25s ease}
+.speaker-arrow:hover{background:rgba(255,166,75,.18);border-color:rgba(255,210,145,.55);color:#ffd18b;transform:translateY(-50%) scale(1.08)}
 .speaker-arrow.prev{left:4px}.speaker-arrow.next{right:4px}
 .speaker-loading,.speaker-error{width:100%;text-align:center;color:#9fb3c5;font-size:9px;padding:25px 10px}
-
 @media (max-width:900px){
-  .speakers-slider{padding-left:30px;padding-right:30px}
-  .speakers-carousel{gap:10px}
-  .speaker-item{flex-basis:130px;width:130px;min-height:190px}
-  .speaker-card-inner{min-height:190px;padding:11px 8px}
-  .speaker-center .speaker-card-inner{min-height:208px;padding:13px 9px}
-  .speaker-photo-ring{width:76px;height:76px}
-  .speaker-center .speaker-photo-ring{width:106px;height:106px}
-  .speaker-center .speaker-name{font-size:12px}
-  .speaker-center .speaker-dept{font-size:7px}
-  .speaker-center .speaker-college{font-size:7.5px}
-  .speaker-center .speaker-country{font-size:7px}
+  .speakers-section{width:90%}.speakers-slider{padding-left:0;padding-right:0}.speakers-carousel{gap:10px}
+  .speaker-item{flex-basis:calc((100% - 20px)/3);width:calc((100% - 20px)/3);height:clamp(220px,31vw,285px)}
+  .speaker-photo-ring,.speaker-center .speaker-photo-ring{width:clamp(75px,11vw,100px);height:clamp(75px,11vw,100px)}
 }
 @media (max-width:680px){
-  .speakers-section{padding:28px 2% 25px}
-  .speakers-heading h2{font-size:21px}.speakers-heading p{font-size:9px}
-  .speakers-slider{padding:5px 25px 8px}
-  .speakers-carousel{gap:7px}
-  .speaker-item{flex-basis:102px;width:102px;min-height:150px}
-  .speaker-card-inner{min-height:150px;padding:7px 4px;border-radius:15px}
-  .speaker-center .speaker-card-inner{min-height:165px;padding:9px 5px}
-  .speaker-photo-ring{width:60px;height:60px;margin-bottom:6px}
-  .speaker-center .speaker-photo-ring{width:82px;height:82px;margin-bottom:8px}
-  .speaker-name{font-size:7px;min-height:18px}.speaker-center .speaker-name{font-size:9.5px;min-height:18px}
-  .speaker-dept{font-size:5.2px;margin-top:2px}.speaker-center .speaker-dept{font-size:6px;margin-top:3px}
-  .speaker-college{font-size:5.7px}.speaker-center .speaker-college{font-size:6.2px;margin-top:3px}
-  .speaker-country{font-size:5.4px}.speaker-center .speaker-country{font-size:5.8px;margin-top:2px}
+  .speakers-section{width:90%;padding:28px 0 25px}.speakers-heading h2{font-size:21px}.speakers-heading p{font-size:9px}.speakers-slider{padding:5px 0 8px}.speakers-carousel{gap:7px}
+  .speaker-item{flex-basis:calc((100% - 14px)/3);width:calc((100% - 14px)/3);height:clamp(180px,43vw,235px)}
+  .speaker-card-inner{padding:9px 5px;border-radius:15px}.speaker-photo-ring,.speaker-center .speaker-photo-ring{width:clamp(55px,17vw,78px);height:clamp(55px,17vw,78px);margin-bottom:7px}
+  .speaker-name,.speaker-center .speaker-name{font-size:clamp(7px,2vw,10px);min-height:24px}.speaker-dept,.speaker-center .speaker-dept{font-size:clamp(5px,1.5vw,7px);margin-top:2px}.speaker-college,.speaker-center .speaker-college{font-size:clamp(5.5px,1.65vw,7.5px);margin-top:3px;min-height:20px}.speaker-country,.speaker-center .speaker-country{font-size:clamp(5px,1.5vw,7px);margin-top:2px}
 }
 @media (max-width:400px){
-  .speaker-item{flex-basis:90px;width:90px;min-height:140px}
-  .speaker-card-inner{min-height:140px}
-  .speaker-center .speaker-card-inner{min-height:154px}
-  .speaker-center .speaker-photo-ring{width:76px;height:76px}
-  .speaker-arrow{width:27px;height:27px;font-size:15px}
+  .speaker-item{flex-basis:calc((100% - 14px)/3);width:calc((100% - 14px)/3);height:clamp(165px,47vw,205px)}.speaker-card-inner{padding:7px 3px}.speaker-photo-ring,.speaker-center .speaker-photo-ring{width:clamp(48px,17vw,65px);height:clamp(48px,17vw,65px)}.speaker-arrow{width:27px;height:27px;font-size:15px}
 }
-
-
 /* Global fluid sizing for remaining sections */
 .info-section{width:100%;padding:clamp(22px,3vw,40px) clamp(4%,5vw,7%)}
 .info-grid{gap:clamp(10px,1.4vw,18px)}
@@ -759,48 +575,48 @@ body{
     <div class="dropdown">
       <button class="dropdown-trigger" onclick="toggleDropdown(this)">Authors ▾</button>
       <div class="dropdown-menu">
-        <a href="#">Call for Abstracts</a>
-        <a href="#">Abstract Submission</a>
-        <a href="#">Submission Guidelines</a>
-        <a href="#">Important Dates</a>
+        <a href="authors.html">Call for Abstracts</a>
+        <a href="authors.html">Abstract Submission</a>
+        <a href="authors.html">Submission Guidelines</a>
+        <a href="authors.html">Important Dates</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropdown-trigger" onclick="toggleDropdown(this)">Attendees ▾</button>
       <div class="dropdown-menu">
-        <a href="#">Registration</a>
-        <a href="#">Accommodation</a>
-        <a href="#">Travel Information</a>
-        <a href="#">Visa Information</a>
+        <a href="registration.html">Registration</a>
+        <a href="accommodation.html">Accommodation</a>
+        <a href="travel.html">Travel Information</a>
+        <a href="visa.html">Visa Information</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropdown-trigger" onclick="toggleDropdown(this)">Program ▾</button>
       <div class="dropdown-menu">
-        <a href="#">Program Overview</a>
-        <a href="#">Plenary Sessions</a>
-        <a href="#">Technical Sessions</a>
-        <a href="#">Poster Sessions</a>
+        <a href="program.html">Program Overview</a>
+        <a href="program.html">Plenary Sessions</a>
+        <a href="program.html">Technical Sessions</a>
+        <a href="program.html">Poster Sessions</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropdown-trigger" onclick="toggleDropdown(this)">Exhibitors ▾</button>
       <div class="dropdown-menu">
-        <a href="#">Exhibition</a>
-        <a href="#">Sponsors</a>
-        <a href="#">Sponsorship</a>
+        <a href="exhibitors.html">Exhibition</a>
+        <a href="exhibitors.html">Sponsors</a>
+        <a href="exhibitors.html">Sponsorship</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropdown-trigger" onclick="toggleDropdown(this)">Conference ▾</button>
       <div class="dropdown-menu">
-        <a href="#">About</a>
-        <a href="#">Organizing Committee</a>
-        <a href="#">Venue</a>
+        <a href="about.html">About</a>
+        <a href="committee.html">Organizing Committee</a>
+        <a href="venue.html">Venue</a>
       </div>
     </div>
     <a href="contact.html">Contact</a>
-    <a href="#" class="register">Register</a>
+    <a href="registration.html" class="register">Register</a>
   </nav>
 
   <!-- Hamburger button (mobile only) -->
@@ -822,10 +638,10 @@ body{
         Authors <span class="mobile-chevron">▾</span>
       </div>
       <div class="mobile-sub">
-        <a href="#">Call for Abstracts</a>
-        <a href="#">Abstract Submission</a>
-        <a href="#">Submission Guidelines</a>
-        <a href="#">Important Dates</a>
+        <a href="authors.html">Call for Abstracts</a>
+        <a href="authors.html">Abstract Submission</a>
+        <a href="authors.html">Submission Guidelines</a>
+        <a href="authors.html">Important Dates</a>
       </div>
     </div>
 
@@ -834,10 +650,10 @@ body{
         Attendees <span class="mobile-chevron">▾</span>
       </div>
       <div class="mobile-sub">
-        <a href="#">Registration</a>
-        <a href="#">Accommodation</a>
-        <a href="#">Travel Information</a>
-        <a href="#">Visa Information</a>
+        <a href="registration.html">Registration</a>
+        <a href="accommodation.html">Accommodation</a>
+        <a href="travel.html">Travel Information</a>
+        <a href="visa.html">Visa Information</a>
       </div>
     </div>
 
@@ -846,10 +662,10 @@ body{
         Program <span class="mobile-chevron">▾</span>
       </div>
       <div class="mobile-sub">
-        <a href="#">Program Overview</a>
-        <a href="#">Plenary Sessions</a>
-        <a href="#">Technical Sessions</a>
-        <a href="#">Poster Sessions</a>
+        <a href="program.html">Program Overview</a>
+        <a href="program.html">Plenary Sessions</a>
+        <a href="program.html">Technical Sessions</a>
+        <a href="program.html">Poster Sessions</a>
       </div>
     </div>
 
@@ -858,9 +674,9 @@ body{
         Exhibitors <span class="mobile-chevron">▾</span>
       </div>
       <div class="mobile-sub">
-        <a href="#">Exhibition</a>
-        <a href="#">Sponsors</a>
-        <a href="#">Sponsorship</a>
+        <a href="exhibitors.html">Exhibition</a>
+        <a href="exhibitors.html">Sponsors</a>
+        <a href="exhibitors.html">Sponsorship</a>
       </div>
     </div>
 
@@ -869,14 +685,14 @@ body{
         Conference <span class="mobile-chevron">▾</span>
       </div>
       <div class="mobile-sub">
-        <a href="#">About</a>
-        <a href="#">Organizing Committee</a>
-        <a href="#">Venue</a>
+        <a href="about.html">About</a>
+        <a href="committee.html">Organizing Committee</a>
+        <a href="venue.html">Venue</a>
       </div>
     </div>
 
     <a href="contact.html" class="mobile-top-link">Contact</a>
-    <a href="#" class="mobile-register">Register Now →</a>
+    <a href="registration.html" class="mobile-register">Register Now →</a>
 
   </div>
 </div>
@@ -893,7 +709,7 @@ body{
     <div class="hero-city">CHENNAI | INDIA</div>
     <div class="hero-country"></div>
     <div class="hero-brand"><span class="bio-loc">BIO-LOC</span><span class="year"> 2027</span></div>
-    <div class="hero-actions"><a href="#" class="hero-action primary">Register Now</a><a href="#" class="hero-action secondary">Submit Request</a></div>
+    <div class="hero-actions"><a href="registration.html" class="hero-action primary">Register Now</a><a href="authors.html" class="hero-action secondary">Submit Request</a></div>
   </div>
 </section>
 
@@ -928,7 +744,7 @@ body{
         <div class="info-number">01</div>
         <h2>Important Dates</h2>
         <p>View abstract submission deadlines, registration dates, notifications and other key conference milestones.</p>
-        <a href="#">View Dates →</a>
+        <a href="program.html">View Dates →</a>
       </div>
     </div>
     <div class="info-card">
@@ -937,7 +753,7 @@ body{
         <div class="info-number">02</div>
         <h2>Program</h2>
         <p>Explore plenary lectures, technical sessions, poster presentations, workshops and special events.</p>
-        <a href="#">View Program →</a>
+        <a href="program.html">View Program →</a>
       </div>
     </div>
     <div class="info-card">
@@ -946,7 +762,7 @@ body{
         <div class="info-number">03</div>
         <h2>Registration</h2>
         <p>Find registration information, categories, fees and everything you need to attend the conference.</p>
-        <a href="#">Register →</a>
+        <a href="registration.html">Register →</a>
       </div>
     </div>
   </div>
@@ -982,11 +798,11 @@ body{
     </div>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="#">Authors</a>
-      <a href="#">Attendees</a>
-      <a href="#">Program</a>
-      <a href="#">Exhibitors</a>
-      <a href="#">Conference</a>
+      <a href="authors.html">Authors</a>
+      <a href="registration.html">Attendees</a>
+      <a href="program.html">Program</a>
+      <a href="exhibitors.html">Exhibitors</a>
+      <a href="conference.html">Conference</a>
       <a href="contact.html">Contact</a>
     </div>
     <div class="social">
@@ -1159,9 +975,9 @@ body{
     const activeCard = cards[activeTrackIndex];
     if(!activeCard) return;
 
-    const viewportWidth = speakersViewport.clientWidth;
-    const cardCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
-    const x = (viewportWidth / 2) - cardCenter;
+    // Keep the active card at the left edge of the 90% viewport so that
+    // exactly 4 cards (desktop) or 3 cards (smaller screens) fill it.
+    const x = -activeCard.offsetLeft;
 
     speakersCarousel.style.transition = animate
       ? 'transform .78s cubic-bezier(.22,.61,.36,1)'
@@ -1172,11 +988,13 @@ body{
   function updateSpeakerClasses(){
     const cards = speakersCarousel.querySelectorAll('.speaker-item');
     cards.forEach((card, i) => {
-      const d = i - activeTrackIndex;
-      card.classList.toggle('speaker-center', d === 0);
-      card.classList.toggle('speaker-near', Math.abs(d) === 1);
-      card.setAttribute('aria-hidden', Math.abs(d) > 3 ? 'true' : 'false');
+      card.classList.remove('speaker-center','speaker-near');
+      card.setAttribute('aria-hidden', Math.abs(i - activeTrackIndex) > 4 ? 'true' : 'false');
     });
+  }
+
+  function visibleSpeakerCount(){
+    return window.innerWidth <= 900 ? 3 : 4;
   }
 
   function changeSpeaker(step){
@@ -1202,7 +1020,8 @@ body{
 
   function startSpeakerTimer(){
     clearInterval(speakerTimer);
-    speakerTimer = setInterval(() => changeSpeaker(1), 3500);
+    // Advance one complete visible group every second: 4 on desktop, 3 on smaller screens.
+    speakerTimer = setInterval(() => changeSpeaker(visibleSpeakerCount()), 1000);
   }
   function restartSpeakerTimer(){ startSpeakerTimer(); }
 
