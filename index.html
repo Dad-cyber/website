@@ -1021,7 +1021,7 @@ body{
   function startSpeakerTimer(){
     clearInterval(speakerTimer);
     // Advance one complete visible group every second: 4 on desktop, 3 on smaller screens.
-    speakerTimer = setInterval(() => changeSpeaker(visibleSpeakerCount()), 2500);
+    speakerTimer = setInterval(() => changeSpeaker(visibleSpeakerCount()), 3000);
   }
   function restartSpeakerTimer(){ startSpeakerTimer(); }
 
