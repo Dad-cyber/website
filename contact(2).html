@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIO-LOC 2027 | Contact</title>
+<style>
+
+/* =========================================================
+   BIO-LOC 2027 — COASTAL SUNSET / GLASS THEME
+   Inspired by the supplied Chennai shoreline temple image
+   ========================================================= */
+
+:root{
+  --navy:#03172d;
+  --deep:#061d36;
+  --blue:#155b90;
+  --glass:rgba(7,27,48,.48);
+  --glass-light:rgba(255,255,255,.10);
+  --glass-border:rgba(255,255,255,.22);
+  --white:#f8fbff;
+  --muted:#b9c9d8;
+  --sun:#ff9b38;
+  --sun-light:#ffd18b;
+  --cyan:#6ed4e8;
+  --shadow:0 16px 45px rgba(0,0,0,.25);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--white);
+  background:
+    radial-gradient(circle at 18% 12%,rgba(255,145,54,.13),transparent 28%),
+    linear-gradient(180deg,#04182e 0%,#011620 44%,#011620 100%);
+}
+
+/* ── GLASS HEADER ── */
+.header{
+  height:62px;
+  background:rgba(3,18,35,.52);
+  border-bottom:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(18px) saturate(145%);
+  -webkit-backdrop-filter:blur(18px) saturate(145%);
+  display:flex;
+  align-items:center;
+  padding:0 4%;
+  position:sticky;
+  top:0;left:0;right:0;
+  z-index:1000;
+  box-shadow:0 8px 30px rgba(0,0,0,.15);
+}
+
+.header:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,210,145,.65),transparent);
+  pointer-events:none;
+}
+
+.logo-area{display:flex;align-items:center;gap:9px;white-space:nowrap}
+
+.logo-circle{
+  width:36px;height:36px;
+  border:1px solid rgba(255,210,145,.8);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:8px;letter-spacing:-.3px;
+  color:#ffe1ad;
+  background:rgba(255,170,70,.08);
+  box-shadow:inset 0 0 12px rgba(255,173,74,.08),0 0 18px rgba(255,150,50,.12);
+}
+
+.logo-text{font-size:14px;font-weight:800;color:#fff;letter-spacing:.2px}
+.logo-text span{color:var(--sun-light)}
+
+.header-divider{
+  width:1px;height:24px;
+  background:rgba(255,255,255,.18);
+  margin:0 12px;
+}
+
+.event-details{
+  display:flex;flex-direction:column;gap:2px;
+  font-size:15px;color:#d1dce7;line-height:1.3;
+}
+.event-details strong{font-size:15px;color:#fff;font-weight:600}
+
+/* ── DESKTOP NAV ── */
+.nav{margin-left:auto;display:flex;align-items:center;gap:3px}
+
+.nav a,
+.dropdown-trigger{
+  text-decoration:none;
+  color:#edf5fb;
+  font-size:15px;
+  font-weight:600;
+  padding:8px 9px;
+  border:1px solid transparent;
+  border-radius:9px;
+  transition:.25s ease;
+}
+
+.dropdown-trigger{
+  background:transparent;
+  cursor:pointer;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.nav a:hover,
+.dropdown-trigger:hover{
+  color:#ffe0ae;
+  background:rgba(255,255,255,.09);
+  border-color:rgba(255,255,255,.13);
+}
+
+.dropdown{position:relative}
+
+.dropdown-menu{
+  position:absolute;
+  top:43px;left:0;width:155px;
+  background:rgba(5,24,43,.78);
+  border:1px solid var(--glass-border);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  display:none;
+  z-index:1200;
+  overflow:hidden;
+  padding:5px;
+}
+
+.dropdown-menu.open{display:block}
+
+.dropdown-menu a{
+  display:block;
+  padding:9px 11px;
+  font-size:12px;
+  font-weight:500;
+  color:#e8f1f8;
+  border-radius:7px;
+}
+
+.dropdown-menu a:hover{
+  background:rgba(255,164,66,.14);
+  color:#ffd18b;
+  border-color:transparent;
+}
+
+.register{
+  margin-left:6px;
+  background:linear-gradient(135deg,#ff9a35,#d9651f)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,224,174,.48)!important;
+  border-radius:9px!important;
+  padding:8px 14px!important;
+  font-size:10px!important;
+  box-shadow:0 5px 18px rgba(223,102,31,.28);
+}
+
+.register:hover{
+  background:linear-gradient(135deg,#ffad4f,#e97428)!important;
+  transform:translateY(-1px);
+}
+
+/* ── HAMBURGER ── */
+.hamburger{
+  display:none;margin-left:auto;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:9px;
+  cursor:pointer;padding:8px;
+  flex-direction:column;gap:4px;align-items:flex-end;
+}
+
+.hamburger span{
+  display:block;height:2px;background:#fff;border-radius:2px;transition:all .25s
+}
+.hamburger span:nth-child(1){width:20px}
+.hamburger span:nth-child(2){width:14px}
+.hamburger span:nth-child(3){width:20px}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);width:20px}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);width:20px}
+
+/* ── MOBILE GLASS DRAWER ── */
+.mobile-nav{
+  display:none;
+  position:fixed;
+  top:62px;left:0;right:0;bottom:0;
+  background:rgba(3,20,36,.88);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  z-index:999;
+  overflow-y:auto;
+  border-top:1px solid rgba(255,255,255,.13);
+}
+.mobile-nav.open{display:block}
+.mobile-nav-inner{padding:10px 0 24px}
+.mobile-nav a.mobile-top-link{
+  display:block;padding:13px 20px;
+  font-size:13px;font-weight:600;
+  color:#f4f8fb;text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.mobile-nav a.mobile-top-link:hover{color:#ffd18b}
+.mobile-section{border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-section-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 20px;cursor:pointer;
+  font-size:13px;font-weight:600;color:#f4f8fb;user-select:none
+}
+.mobile-section-header:hover{color:#ffd18b}
+.mobile-chevron{font-size:10px;transition:transform .2s;color:#b7c9d8}
+.mobile-section.open .mobile-chevron{transform:rotate(180deg)}
+.mobile-sub{
+  display:none;
+  background:rgba(255,255,255,.035);
+  padding:4px 0;
+}
+.mobile-section.open .mobile-sub{display:block}
+.mobile-sub a{
+  display:block;padding:10px 32px;
+  font-size:12px;color:#b9c9d8;
+  text-decoration:none;font-weight:500;
+}
+.mobile-sub a:hover{color:#ffd18b}
+.mobile-register{
+  display:block;margin:17px 20px 0;
+  background:linear-gradient(135deg,#ff9a35,#d9651f);
+  color:#fff!important;text-align:center;
+  padding:12px;border-radius:9px;
+  font-size:13px;font-weight:700;text-decoration:none;
+  box-shadow:0 7px 20px rgba(217,101,31,.25);
+}
+
+/* ── HERO / CANVA-MATCHED CONTENT ── */
+.hero{width:100%;
+  min-height:clamp(400px,8vw,550px);
+  aspect-ratio:21/9;
+  position:relative;
+  overflow:hidden;
+  background:#04182e}
+.hero img{position:absolute;
+  inset:0;width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  transform:scale(1.015)}
+.hero-overlay{position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(2,17,34,.84) 0%,rgba(2,20,37,.46) 48%,rgba(2,16,31,.08) 100%),linear-gradient(0deg,rgba(2,14,27,.80) 0%,transparent 55%,rgba(2,14,27,.08) 100%)}
+.hero:after{content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:18%;
+  background:linear-gradient(0deg,rgba(3,23,45,.9),transparent);
+  pointer-events:none}
+.hero-content{position:absolute;
+  left:clamp(4%,2.0vw,8%);top:35%;
+  transform:translateY(-50%);
+  width:min(80%,1100px);
+  z-index:2;color:#fff;
+  text-align:left}
+.hero-conference{font-size:clamp(14px,2.5vw,32px);
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:.01em;
+  max-width:1000px;
+  margin-bottom:clamp(12px,1.0vw,20px);
+  color:#e59a23;
+  text-shadow:0 3px 16px rgba(0,0,0,.4)}
+.hero-institution{font-size:clamp(10px,1.45vw,28px);
+  font-weight:400;
+  line-height:1.0;
+  letter-spacing:.07em;
+  margin-bottom:clamp(10px,0.5vw,20px);
+  color:#fff}
+.hero-institution span{color:#5ad6ef}
+.hero-date{font-size:clamp(13px,1.75vw,22px);
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:.08em;
+  margin-bottom:clamp(8px,1.0vw,12px);
+  color:#dff46c}
+.hero-city,.hero-country{font-size:clamp(20px,2.50vw,30px);font-weight:750;line-height:1.20;letter-spacing:.04em;color:#fff}
+.hero-country{color:#dceaf4;margin-top:clamp(5px,.55vw,8px)}
+.hero-brand{display:block;
+  white-space:nowrap;
+  font-size:clamp(48px,4.5vw,104px);
+  line-height:.92;font-weight:900;
+  letter-spacing:-.045em;
+  margin-top:clamp(14px,1.0vw,24px);
+  text-shadow:0 5px 24px rgba(0,0,0,.4)}
+.hero-brand .bio-loc{color:#ffd08b;
+  text-shadow:0 0 25px rgba(255,164,70,.2)}
+.hero-brand .year{color:#6ed4e8}
+.hero-actions{margin-top:clamp(18px,2vw,28px);
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px}
+.hero-action{display:inline-block;
+  text-decoration:none;
+  padding:clamp(9px,.7vw,13px) clamp(15px,1.3vw,22px);
+  border-radius:9px;font-size:clamp(10px,1.5vw,13px);
+  font-weight:700;transition:.25s ease}
+.hero-action.primary{background:linear-gradient(135deg,#ff9a35,#d9651f);color:#fff;border:1px solid rgba(255,224,174,.45);box-shadow:0 7px 22px rgba(217,101,31,.28)}.hero-action.primary:hover{transform:translateY(-2px)}.hero-action.secondary{color:#fff;border:1px solid rgba(255,255,255,.52);background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.hero-action.secondary:hover{background:rgba(255,255,255,.16);border-color:#fff}@media (max-width:1100px){.hero-content{left:5%;width:92%;height:70%;top:51%}.hero-conference{font-size:clamp(13px,2.2vw,25px)}}@media (max-width:900px){.hero{min-height:540px;aspect-ratio:auto}.hero-content{left:5%;width:90%;height:70%;top:52%}.hero-conference{font-size:clamp(12px,2.8vw,22px)}.hero-brand{font-size:clamp(44px,9vw,76px)}}@media (max-width:700px){.hero{min-height:500px}.hero-content{left:5%;width:90%;height:70%;top:51%}.hero-conference{font-size:clamp(9px,2.8vw,16px);letter-spacing:0}.hero-institution{font-size:clamp(10px,2.8vw,15px)}.hero-date{font-size:clamp(10px,3vw,16px)}.hero-city,.hero-country{font-size:clamp(14px,4.2vw,23px)}.hero-brand{font-size:clamp(38px,12vw,68px)}.hero-actions{gap:8px}}@media (max-width:400px){.hero{min-height:460px}.hero-content{left:5%;width:90%;height:70%;top:50%}.hero-conference{font-size:9px;line-height:1.1}.hero-institution{font-size:10px;line-height:1.25}.hero-date{font-size:9px}.hero-city,.hero-country{font-size:15px}.hero-brand{font-size:clamp(34px,12.5vw,52px)}.hero-actions{gap:6px}.hero-action{padding:8px 10px;font-size:9px}}
+/* ── GLASS INFO CARDS ── */
+.info-section{
+  max-width:1200px;margin:auto;padding:25px 4%;
+  position:relative;
+}
+
+.info-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px
+}
+
+.info-card{
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:15px;
+  padding:17px;
+  display:grid;grid-template-columns:42px 1fr;
+  gap:13px;align-items:start;
+  background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.045));
+  box-shadow:0 10px 30px rgba(0,0,0,.14);
+  backdrop-filter:blur(13px);
+  -webkit-backdrop-filter:blur(13px);
+  transition:.25s ease;
+}
+
+.info-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,190,105,.38);
+  box-shadow:0 15px 36px rgba(0,0,0,.23);
+}
+
+.info-icon{
+  width:35px;height:35px;border-radius:10px;
+  background:linear-gradient(135deg,rgba(255,163,67,.18),rgba(96,205,228,.13));
+  border:1px solid rgba(255,255,255,.16);
+  color:#ffd18b;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;
+}
+
+.info-number{color:#c9eef5;font-size:15px;font-weight:700;margin-bottom:4px}
+.info-card h2{font-size:15px;margin-bottom:5px;color:#03f8c3}
+.info-card p{font-size:14px;color:#b8c8d6;line-height:1.55;margin-bottom:8px}
+.info-card a{color:#ffd18b;font-size:12px;font-weight:700;text-decoration:none}
+.info-card a:hover{color:#fff}
+
+/* ── SPONSORS ── */
+.sponsors{
+  background:linear-gradient(180deg,rgba(1,17,33,.18),rgba(1,12,24,.52));
+  padding:25px 4% 29px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.07);
+}
+
+.sponsors-label{
+  color:#6ed4e8;font-size:20px;font-weight:700;
+  letter-spacing:1.8px;text-transform:uppercase;margin-bottom:4px
+}
+.sponsors h2{font-size:25px;color:#fff;margin-bottom:17px}
+
+.sponsor-grid{
+  max-width:1200px;margin:auto;
+  display:grid;grid-template-columns:repeat(8,1fr);gap:7px
+}
+
+.sponsor{
+  height:38px;
+  background:rgba(255,255,255,.065);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:9px;
+  display:flex;justify-content:center;align-items:center;
+  padding:6px;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  transition:.2s;
+}
+.sponsor:hover{
+  border-color:rgba(255,196,119,.35);
+  background:rgba(255,255,255,.095);
+}
+.sponsor-name{font-size:9px;font-weight:700;color:#c4d1dc}
+
+/* ── FOOTER ── */
+.footer{
+  background:#020f1f;color:white;
+  padding:18px 4% 12px;
+  border-top:1px solid rgba(255,255,255,.11);
+}
+.footer-main{
+  max-width:1200px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between
+}
+.footer-brand{display:flex;align-items:center;gap:8px}
+.footer-circle{
+  width:25px;height:25px;border:1px solid #ffd18b;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:6px;font-weight:700;color:#ffd18b
+}
+.footer-brand strong{font-size:10px}
+.footer-brand p{font-size:7px;color:#8fa7bb;margin-top:2px}
+.footer-links{display:flex;gap:13px}
+.footer-links a{color:#c6d4df;text-decoration:none;font-size:8px}
+.footer-links a:hover{color:#ffd18b}
+.social{display:flex;gap:5px}
+.social span{
+  width:19px;height:19px;border:1px solid #6f879b;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:7px;color:#d7e2ea
+}
+.footer-bottom{
+  max-width:1200px;margin:11px auto 0;padding-top:10px;
+  border-top:1px solid rgba(255,255,255,.11);
+  display:flex;justify-content:space-between;
+  color:#8299ad;font-size:7px
+}
+
+/* ── RESPONSIVE LAYOUT: DESKTOP / LAPTOP / TABLET / MOBILE ── */
+
+/* Desktop: >=1200px */
+@media (min-width:1200px){
+  .header{height:clamp(62px,4vw,74px);padding:0 clamp(28px,4vw,60px)}
+  .logo-circle{width:clamp(36px,2.6vw,46px);height:clamp(36px,2.6vw,46px)}
+  .logo-text{font-size:clamp(13px,1vw,16px)}
+  .event-details{font-size:clamp(8px,.62vw,10px)}
+  .event-details strong{font-size:clamp(8px,.62vw,10px)}
+  .nav a,.dropdown-trigger{font-size:clamp(11px,.82vw,14px);padding:clamp(7px,.55vw,10px) clamp(7px,.7vw,12px)}
+}
+
+/* Laptop: 901–1199px */
+@media (min-width:901px) and (max-width:1199px){
+  .header{height:60px;padding:0 2.5%;gap:6px}
+  .header-divider{margin:0 6px}
+  .logo-text{font-size:13px}
+  .event-details{font-size:8px}
+  .event-details strong{font-size:8px}
+  .nav{gap:0}
+  .nav a,.dropdown-trigger{font-size:10px;padding:6px 5px}
+  .register{padding:7px 9px!important;font-size:9px!important}
+}
+
+/* Tablet: 701–900px */
+@media (min-width:701px) and (max-width:900px){
+  .header{height:58px;padding:0 3%}
+  .event-details,.header-divider{display:none}
+  .nav{gap:1px}
+  .nav a,.dropdown-trigger{font-size:9px;padding:6px 5px}
+  .register{font-size:9px!important;padding:6px 8px!important}
+}
+
+/* Small tablet + mobile: <=700px */
+@media (max-width:700px){
+  .header{height:58px;padding:0 4%}
+  .event-details,.header-divider,.nav{display:none}
+  .hamburger{display:flex}
+  .mobile-nav{top:58px}
+  .info-grid{grid-template-columns:1fr}
+  .sponsor-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-main{flex-direction:column;gap:13px}
+  .footer-bottom{flex-direction:column;gap:5px}
+}
+
+/* Small phones: <=400px */
+@media (max-width:400px){
+  .header{height:54px}
+  .logo-circle{width:32px;height:32px}
+  .logo-text{font-size:11px}
+  .mobile-nav{top:54px}
+  .info-card{grid-template-columns:1fr}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+}
+
+/* Fluid grids at intermediate widths */
+@media (min-width:901px) and (max-width:1100px){
+  .info-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sponsor-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ── CONFIRMED SPEAKERS / MOVING PROFILE CARD SLIDER ── */
+.speakers-section{
+  max-width:1280px;
+  margin:0 auto;
+  padding:34px 3% 32px;
+  position:relative;
+}
+.speakers-heading{text-align:center;margin-bottom:20px}
+.speakers-label{color:var(--cyan);font-size:15px;font-weight:650;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:6px}
+.speakers-heading h2{font-size:24px;line-height:1.1;color:#fff;margin-bottom:6px}
+.speakers-heading p{font-size:13px;color:var(--muted)}
+
+.speakers-slider{position:relative;padding:8px 42px 14px}
+.speakers-carousel-wrap{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  padding:18px 0 24px;
+}
+.speakers-carousel{
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  gap:16px;
+  width:max-content;
+  will-change:transform;
+  transition:transform .78s cubic-bezier(.22,.75,.2,1);
+}
+
+/* Every speaker is a complete card. */
+.speaker-item{
+  flex:0 0 170px;
+  width:170px;
+  min-height:220px;
+  text-align:center;
+  user-select:none;
+  cursor:pointer;
+  opacity:.62;
+  transform:scale(.86);
+  transform-origin:center center;
+  transition:
+    transform .78s cubic-bezier(.22,.75,.2,1),
+    opacity .78s ease,
+    filter .78s ease;
+  outline:none;
+  filter:saturate(.78);
+}
+.speaker-item.speaker-near{
+  opacity:.82;
+  transform:scale(.93);
+  filter:saturate(.92);
+}
+.speaker-item.speaker-center{
+  opacity:1;
+  transform:scale(1.10);
+  z-index:5;
+  filter:saturate(1.08);
+  cursor:pointer;
+}
+
+.speaker-card-inner{
+  width:100%;
+  min-height:220px;
+  padding:15px 11px 13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  box-shadow:0 10px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.05);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  transition:
+    background .78s ease,
+    border-color .78s ease,
+    box-shadow .78s ease;
+}
+.speaker-item:hover .speaker-card-inner{
+  border-color:rgba(255,210,145,.30);
+  background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035));
+}
+.speaker-center .speaker-card-inner{
+  min-height:242px;
+  padding:17px 13px 15px;
+  background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.045));
+  border-color:rgba(255,213,153,.42);
+  box-shadow:
+    0 20px 48px rgba(0,0,0,.32),
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 0 34px rgba(110,212,232,.10);
+}
+
+.speaker-photo-ring{
+  width:100px;height:100px;
+  flex:0 0 auto;
+  margin:0 auto 11px;
+  padding:3px;
+  border-radius:50%;
+  background:linear-gradient(135deg,rgba(255,184,100,.62),rgba(110,212,232,.55));
+  box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 24px rgba(0,0,0,.25);
+  transition:
+    width .78s cubic-bezier(.22,.75,.2,1),
+    height .78s cubic-bezier(.22,.75,.2,1),
+    padding .78s ease,
+    margin-bottom .78s ease,
+    background .78s ease,
+    box-shadow .78s ease;
+}
+.speaker-center .speaker-photo-ring{
+  width:130px;height:130px;
+  padding:5px;
+  margin-bottom:13px;
+  background:linear-gradient(135deg,#ffd18b,#6ed4e8);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.20),
+    0 14px 40px rgba(0,0,0,.35),
+    0 0 40px rgba(110,212,232,.18);
+}
+.speaker-photo{
+  width:100%;height:100%;display:block;
+  object-fit:cover;object-position:center;
+  border-radius:50%;
+  border:3px solid rgba(4,23,45,.92);
+  background:#102b43;
+}
+.speaker-name{
+  width:100%;
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  line-height:1.25;
+  min-height:25px;
+  transition:font-size .78s ease,color .78s ease;
+}
+.speaker-center .speaker-name{font-size:14px;min-height:24px}
+.speaker-dept{
+  width:100%;
+  color:var(--cyan);
+  font-size:6.8px;
+  font-weight:700;
+  line-height:1.35;
+  margin-top:4px;
+  transition:font-size .78s ease,margin .78s ease;
+}
+.speaker-center .speaker-dept{font-size:8px;margin-top:5px}
+.speaker-college{
+  width:100%;
+  color:#d8e5ef;
+  font-size:7.2px;
+  font-weight:700;
+  line-height:1.3;
+  margin-top:5px;
+  min-height:18px;
+  transition:font-size .78s ease,margin .78s ease;
+}
+.speaker-country{
+  width:100%;
+  color:#ffd18b;
+  font-size:6.8px;
+  font-weight:800;
+  line-height:1.25;
+  margin-top:2px;
+  letter-spacing:.15px;
+  transition:font-size .78s ease,margin .78s ease;
+}
+.speaker-center .speaker-college{font-size:8.5px;margin-top:6px}
+.speaker-center .speaker-country{font-size:8px;margin-top:3px}
+
+.speaker-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
+  color:#fff;font-size:18px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:8;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:.25s ease;
+}
+.speaker-arrow:hover{
+  background:rgba(255,166,75,.18);
+  border-color:rgba(255,210,145,.55);
+  color:#ffd18b;
+  transform:translateY(-50%) scale(1.08);
+}
+.speaker-arrow.prev{left:4px}.speaker-arrow.next{right:4px}
+.speaker-loading,.speaker-error{width:100%;text-align:center;color:#9fb3c5;font-size:9px;padding:25px 10px}
+
+@media (max-width:900px){
+  .speakers-slider{padding-left:30px;padding-right:30px}
+  .speakers-carousel{gap:10px}
+  .speaker-item{flex-basis:130px;width:130px;min-height:190px}
+  .speaker-card-inner{min-height:190px;padding:11px 8px}
+  .speaker-center .speaker-card-inner{min-height:208px;padding:13px 9px}
+  .speaker-photo-ring{width:76px;height:76px}
+  .speaker-center .speaker-photo-ring{width:106px;height:106px}
+  .speaker-center .speaker-name{font-size:12px}
+  .speaker-center .speaker-dept{font-size:7px}
+  .speaker-center .speaker-college{font-size:7.5px}
+  .speaker-center .speaker-country{font-size:7px}
+}
+@media (max-width:680px){
+  .speakers-section{padding:28px 2% 25px}
+  .speakers-heading h2{font-size:21px}.speakers-heading p{font-size:9px}
+  .speakers-slider{padding:5px 25px 8px}
+  .speakers-carousel{gap:7px}
+  .speaker-item{flex-basis:102px;width:102px;min-height:150px}
+  .speaker-card-inner{min-height:150px;padding:7px 4px;border-radius:15px}
+  .speaker-center .speaker-card-inner{min-height:165px;padding:9px 5px}
+  .speaker-photo-ring{width:60px;height:60px;margin-bottom:6px}
+  .speaker-center .speaker-photo-ring{width:82px;height:82px;margin-bottom:8px}
+  .speaker-name{font-size:7px;min-height:18px}.speaker-center .speaker-name{font-size:9.5px;min-height:18px}
+  .speaker-dept{font-size:5.2px;margin-top:2px}.speaker-center .speaker-dept{font-size:6px;margin-top:3px}
+  .speaker-college{font-size:5.7px}.speaker-center .speaker-college{font-size:6.2px;margin-top:3px}
+  .speaker-country{font-size:5.4px}.speaker-center .speaker-country{font-size:5.8px;margin-top:2px}
+}
+@media (max-width:400px){
+  .speaker-item{flex-basis:90px;width:90px;min-height:140px}
+  .speaker-card-inner{min-height:140px}
+  .speaker-center .speaker-card-inner{min-height:154px}
+  .speaker-center .speaker-photo-ring{width:76px;height:76px}
+  .speaker-arrow{width:27px;height:27px;font-size:15px}
+}
+
+
+/* Global fluid sizing for remaining sections */
+.info-section{width:100%;padding:clamp(22px,3vw,40px) clamp(4%,5vw,7%)}
+.info-grid{gap:clamp(10px,1.4vw,18px)}
+.info-card{padding:clamp(13px,1.5vw,20px)}
+.sponsors{padding:clamp(22px,3vw,38px) clamp(4%,5vw,7%)}
+.sponsor-grid{width:100%;gap:clamp(6px,1vw,12px)}
+.footer{padding:clamp(16px,2vw,26px) clamp(4%,5vw,7%) 12px}
+.footer-main,.footer-bottom{width:100%;max-width:1400px}
+
+/* Enhanced responsive header navigation */
+.nav a,.dropdown-trigger{font-size:clamp(13px,1vw,16px)!important;font-weight:600;padding:8px clamp(8px,.9vw,14px)!important;white-space:nowrap}
+.register{font-size:clamp(12px,.95vw,15px)!important;padding:9px clamp(11px,1vw,16px)!important;white-space:nowrap}
+@media (min-width:901px) and (max-width:1199px){.nav a,.dropdown-trigger{font-size:clamp(12px,1.15vw,14px)!important;padding:7px clamp(6px,.7vw,10px)!important}.register{font-size:12px!important;padding:8px 10px!important}}
+@media (min-width:701px) and (max-width:900px){.nav{gap:0}.nav a,.dropdown-trigger{font-size:11px!important;padding:6px 4px!important}.register{font-size:10px!important;padding:7px 8px!important}}
+@media (max-width:700px){.nav{display:none!important}.hamburger{display:flex!important}}
+
+</style>
+
+<style>
+/* Contact page content only — the original BIO-LOC header/navigation is preserved unchanged */
+.contact-page {
+  padding: 72px 6vw 90px;
+  min-height: 70vh;
+}
+
+.contact-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.contact-heading .section-label {
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .78rem;
+  font-weight: 700;
+  opacity: .75;
+  margin-bottom: 10px;
+}
+
+.contact-heading h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+}
+
+.contact-heading p {
+  max-width: 720px;
+  margin: 14px auto 0;
+  opacity: .78;
+  line-height: 1.7;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: minmax(300px, .9fr) minmax(320px, 1.1fr);
+  gap: 34px;
+  align-items: stretch;
+  padding: 26px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 20px 55px rgba(0,0,0,.18);
+  backdrop-filter: blur(18px);
+}
+
+.contact-image-box {
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255,255,255,.06);
+}
+
+.contact-image-box img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+  object-fit: cover;
+}
+
+.contact-details {
+  display: grid;
+  gap: 15px;
+  align-content: center;
+}
+
+.contact-item {
+  padding: 20px 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.065);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.contact-item h2 {
+  margin: 0 0 9px;
+  font-size: 1.05rem;
+}
+
+.contact-item p {
+  margin: 0;
+  line-height: 1.75;
+  opacity: .9;
+}
+
+.contact-item a {
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-emails {
+  display: grid;
+  gap: 4px;
+}
+
+.contact-note {
+  margin-top: 2px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  line-height: 1.65;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+@media (max-width: 900px) {
+  .contact-page {
+    padding: 54px 5vw 70px;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-image-box,
+  .contact-image-box img {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-page {
+    padding: 42px 4vw 58px;
+  }
+
+  .contact-card {
+    padding: 14px;
+    gap: 18px;
+    border-radius: 22px;
+  }
+
+  .contact-image-box,
+  .contact-image-box img {
+    min-height: 280px;
+  }
+
+  .contact-item {
+    padding: 17px;
+  }
+}
+</style>
+</head>
+<body>
+<!-- Coastal sunset / Shore Temple visual theme: navy, amber, cyan and glassmorphism. -->
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <div class="logo-circle">BIO-LOC</div>
+    <div class="logo-text">BIO-LOC <span>2027</span></div>
+  </div>
+
+  <div class="header-divider"></div>
+  <div class="event-details">
+    <strong>International Conference Cum Workshop on<br>Bio-chip & Organ-On-Chip</strong>
+  </div>
+  <div class="header-divider"></div>
+  <div class="event-details">
+    <span>📍 Chennai, India</span>
+    <span>📅 27–28 August 2027</span>
+  </div>
+
+  <!-- Desktop nav -->
+  <nav class="nav">
+    <a href="#">Home</a>
+    <div class="dropdown">
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Authors ▾</button>
+      <div class="dropdown-menu">
+        <a href="#">Call for Abstracts</a>
+        <a href="#">Abstract Submission</a>
+        <a href="#">Submission Guidelines</a>
+        <a href="#">Important Dates</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Attendees ▾</button>
+      <div class="dropdown-menu">
+        <a href="#">Registration</a>
+        <a href="#">Accommodation</a>
+        <a href="#">Travel Information</a>
+        <a href="#">Visa Information</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Program ▾</button>
+      <div class="dropdown-menu">
+        <a href="#">Program Overview</a>
+        <a href="#">Plenary Sessions</a>
+        <a href="#">Technical Sessions</a>
+        <a href="#">Poster Sessions</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Exhibitors ▾</button>
+      <div class="dropdown-menu">
+        <a href="#">Exhibition</a>
+        <a href="#">Sponsors</a>
+        <a href="#">Sponsorship</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Conference ▾</button>
+      <div class="dropdown-menu">
+        <a href="#">About</a>
+        <a href="#">Organizing Committee</a>
+        <a href="#">Venue</a>
+      </div>
+    </div>
+    <a href="#">Contact</a>
+    <a href="#" class="register">Register</a>
+  </nav>
+
+  <!-- Hamburger button (mobile only) -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-inner">
+
+    <a href="#" class="mobile-top-link">Home</a>
+
+    <div class="mobile-section">
+      <div class="mobile-section-header" onclick="toggleSection(this)">
+        Authors <span class="mobile-chevron">▾</span>
+      </div>
+      <div class="mobile-sub">
+        <a href="#">Call for Abstracts</a>
+        <a href="#">Abstract Submission</a>
+        <a href="#">Submission Guidelines</a>
+        <a href="#">Important Dates</a>
+      </div>
+    </div>
+
+    <div class="mobile-section">
+      <div class="mobile-section-header" onclick="toggleSection(this)">
+        Attendees <span class="mobile-chevron">▾</span>
+      </div>
+      <div class="mobile-sub">
+        <a href="#">Registration</a>
+        <a href="#">Accommodation</a>
+        <a href="#">Travel Information</a>
+        <a href="#">Visa Information</a>
+      </div>
+    </div>
+
+    <div class="mobile-section">
+      <div class="mobile-section-header" onclick="toggleSection(this)">
+        Program <span class="mobile-chevron">▾</span>
+      </div>
+      <div class="mobile-sub">
+        <a href="#">Program Overview</a>
+        <a href="#">Plenary Sessions</a>
+        <a href="#">Technical Sessions</a>
+        <a href="#">Poster Sessions</a>
+      </div>
+    </div>
+
+    <div class="mobile-section">
+      <div class="mobile-section-header" onclick="toggleSection(this)">
+        Exhibitors <span class="mobile-chevron">▾</span>
+      </div>
+      <div class="mobile-sub">
+        <a href="#">Exhibition</a>
+        <a href="#">Sponsors</a>
+        <a href="#">Sponsorship</a>
+      </div>
+    </div>
+
+    <div class="mobile-section">
+      <div class="mobile-section-header" onclick="toggleSection(this)">
+        Conference <span class="mobile-chevron">▾</span>
+      </div>
+      <div class="mobile-sub">
+        <a href="#">About</a>
+        <a href="#">Organizing Committee</a>
+        <a href="#">Venue</a>
+      </div>
+    </div>
+
+    <a href="#" class="mobile-top-link">Contact</a>
+    <a href="#" class="mobile-register">Register Now →</a>
+
+  </div>
+</div>
+
+
+
+<!-- CONTACT PAGE -->
+<section class="contact-page">
+  <div class="contact-wrap">
+    <div class="contact-heading">
+      <div class="section-label">Contact</div>
+      <h1>Contact BIO-LOC 2027</h1>
+      <p>For conference information, registration, abstracts, exhibits, and other enquiries, please use the contact details below.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-image-box">
+        <img src="https://www.mems26.org/images/contact-pic1.jpg" alt="MEMS 2026 Contact">
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <h2>Postal Address</h2>
+          <p>
+            <strong>MEMS 2026</strong><br>
+            c/o Preferred Meeting Management, Inc.<br>
+            307 Laurel Street<br>
+            San Diego, CA 92101-1630, USA
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <h2>Phone</h2>
+          <p><a href="tel:+16192329499">+1-619-232-9499</a></p>
+        </div>
+
+        <div class="contact-item">
+          <h2>Fax</h2>
+          <p>+1-619-232-0799</p>
+        </div>
+
+        <div class="contact-item">
+          <h2>Email</h2>
+          <div class="contact-emails">
+            <a href="mailto:info@mems26.org">info@mems26.org</a>
+            <a href="mailto:abstracts@mems26.org">abstracts@mems26.org</a>
+            <a href="mailto:authors@mems26.org">authors@mems26.org</a>
+            <a href="mailto:exhibits@mems26.org">exhibits@mems26.org</a>
+            <a href="mailto:registration@mems26.org">registration@mems26.org</a>
+          </div>
+        </div>
+
+        <div class="contact-note">
+          To be added to the mailing list, please contact
+          <a href="mailto:info@mems26.org">info@mems26.org</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="footer-circle">BIO-LOC</div>
+      <div>
+        <strong>BIO-LOC 2027</strong>
+        <p>International Conference Cum Workshop on Bio-Chip & Organ-On-Chip</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">Authors</a>
+      <a href="#">Attendees</a>
+      <a href="#">Program</a>
+      <a href="#">Exhibitors</a>
+      <a href="#">Conference</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="social">
+      <span>in</span>
+      <span>𝕏</span>
+      <span>▶</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2027 BIO-LOC Conference. All Rights Reserved.</span>
+    <span>Chennai, India</span>
+  </div>
+</footer>
+
+<script>
+  /* ── Hamburger / mobile drawer ── */
+  const btn = document.getElementById('hamburgerBtn');
+  const drawer = document.getElementById('mobileNav');
+
+  btn.addEventListener('click', function() {
+    const isOpen = drawer.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  drawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      drawer.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ── Mobile accordion sections ── */
+  function toggleSection(header) {
+    const section = header.parentElement;
+    const wasOpen = section.classList.contains('open');
+    document.querySelectorAll('.mobile-section.open').forEach(s => s.classList.remove('open'));
+    if (!wasOpen) section.classList.add('open');
+  }
+
+  /* ── Desktop dropdown (click-based, works on touch too) ── */
+  function toggleDropdown(trigger) {
+    const menu = trigger.nextElementSibling;
+    const isOpen = menu.classList.contains('open');
+    closeAllDropdowns();
+    if (!isOpen) menu.classList.add('open');
+  }
+
+  function closeAllDropdowns() {
+    document.querySelectorAll('.dropdown-menu.open').forEach(m => m.classList.remove('open'));
+  }
+
+  /* Close dropdown when clicking/tapping anywhere outside */
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) closeAllDropdowns();
+  });
+
+  /* Close dropdown when a sub-link is selected */
+  document.querySelectorAll('.dropdown-menu a').forEach(link => {
+    link.addEventListener('click', closeAllDropdowns);
+  });
+
+  /* ── Confirmed speakers: smooth moving-card slider ── */
+  const speakersCarousel = document.getElementById('speakersCarousel');
+  const speakersViewport = document.querySelector('.speakers-carousel-wrap');
+
+  /* ── FIXED GITHUB SPEAKER IMAGE URLS ──
+     No GitHub Contents API is used here.
+     Images are loaded directly from raw.githubusercontent.com.
+  */
+  const speakerImageBase =
+    'https://raw.githubusercontent.com/Dad-cyber/website/main/web_photos/';
+
+  const speakerImagesFixed = [
+    `${speakerImageBase}speaker1.jpg`,
+    `${speakerImageBase}speaker2.jpg`,
+    `${speakerImageBase}speaker3.jpg`,
+    `${speakerImageBase}speaker4.jpg`,
+    `${speakerImageBase}speaker5.jpg`,
+    `${speakerImageBase}speaker6.jpg`,
+    `${speakerImageBase}speaker7.jpg`
+  ];
+
+  const speakerDetails = [
+    {name:'Dr. Tuhin Subhra Santra', college:'Indian Institute of Technology Madras', country:'India'},
+    {name:'Dr. Fan-Gang Tseng', college:'National Tsing Hua University', country:'Taiwan'},
+    {name:'Dr. Zong-Hong Lin', college:'National Taiwan University', country:'Taiwan'},
+    {name:'Dr. Chia-Fu Chou', college:'Academia Sinica', country:'Taiwan'},
+    {name:'Dr. Moeto Nagai', college:'Toyohashi University of Technology', country:'Japan'},
+    {name:'Dr. Sangjin Ryu', college:'Bradley University', country:'USA'},
+    {name:'Dr. Hwan-You Chang', college:'National Tsing Hua University', country:'Taiwan'}
+  ];
+
+  let speakerImages = [];
+  let activeTrackIndex = 0;
+  let speakerTimer = null;
+  let isAnimating = false;
+
+  function speakerCard(imageUrl, detail, index){
+    const item = document.createElement('article');
+    item.className = 'speaker-item';
+    item.dataset.index = index;
+    item.setAttribute('role','button');
+    item.setAttribute('tabindex','0');
+    item.setAttribute('aria-label', detail.name);
+    item.innerHTML = `
+      <div class="speaker-card-inner">
+        <div class="speaker-photo-ring">
+          <img class="speaker-photo" src="${imageUrl}" alt="${detail.name}" loading="eager" decoding="async" onerror="this.style.opacity='.25'; this.parentElement.style.background='#102b43';">
+        </div>
+        <div class="speaker-name">${detail.name}</div>
+        <div class="speaker-college">${detail.college}</div>
+        <div class="speaker-country">${detail.country}</div>
+      </div>`;
+
+    item.addEventListener('click', () => {
+      const target = Number(item.dataset.index);
+      const n = speakerImages.length;
+      if(!n || isAnimating) return;
+      const targetSpeaker = ((target % n) + n) % n;
+      const currentSpeaker = activeTrackIndex % n;
+      let delta = targetSpeaker - currentSpeaker;
+      if(delta > n / 2) delta -= n;
+      if(delta < -n / 2) delta += n;
+      if(delta) changeSpeaker(delta);
+    });
+    item.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){e.preventDefault(); item.click();}
+    });
+    return item;
+  }
+
+  function buildTrack(){
+    speakersCarousel.innerHTML = '';
+    // Three copies allow the cards to keep moving smoothly in either direction.
+    const copies = [0,1,2];
+    copies.forEach(copy => {
+      speakerImages.forEach((url, i) => {
+        const detail = speakerDetails[i] || {
+          name:`Speaker ${String(i+1).padStart(2,'0')}`,
+          college:'College / Institution', country:''
+        };
+        speakersCarousel.appendChild(speakerCard(url, detail, copy * speakerImages.length + i));
+      });
+    });
+
+    activeTrackIndex = speakerImages.length;
+    requestAnimationFrame(() => {
+      updateSpeakerClasses();
+      moveTrack(false);
+    });
+  }
+
+  function cardStep(){
+    const first = speakersCarousel.querySelector('.speaker-item');
+    if(!first) return 0;
+    const gap = parseFloat(getComputedStyle(speakersCarousel).gap) || 0;
+    return first.getBoundingClientRect().width + gap;
+  }
+
+  /*
+   * IMPORTANT: The active card is centered from its REAL DOM position,
+   * not from a calculated card count. This keeps the highlighted card
+   * exactly at the visual center even when there is an even number of
+   * speakers (8, 10, 12, etc.).
+   */
+  function moveTrack(animate=true){
+    const cards = speakersCarousel.querySelectorAll('.speaker-item');
+    const activeCard = cards[activeTrackIndex];
+    if(!activeCard) return;
+
+    const viewportWidth = speakersViewport.clientWidth;
+    const cardCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
+    const x = (viewportWidth / 2) - cardCenter;
+
+    speakersCarousel.style.transition = animate
+      ? 'transform .78s cubic-bezier(.22,.61,.36,1)'
+      : 'none';
+    speakersCarousel.style.transform = `translate3d(${x}px,0,0)`;
+  }
+
+  function updateSpeakerClasses(){
+    const cards = speakersCarousel.querySelectorAll('.speaker-item');
+    cards.forEach((card, i) => {
+      const d = i - activeTrackIndex;
+      card.classList.toggle('speaker-center', d === 0);
+      card.classList.toggle('speaker-near', Math.abs(d) === 1);
+      card.setAttribute('aria-hidden', Math.abs(d) > 3 ? 'true' : 'false');
+    });
+  }
+
+  function changeSpeaker(step){
+    if(!speakerImages.length || isAnimating || !step) return;
+    isAnimating = true;
+    activeTrackIndex += step;
+    updateSpeakerClasses();
+    moveTrack(true);
+    restartSpeakerTimer();
+  }
+
+  speakersCarousel.addEventListener('transitionend', e => {
+    if(e.propertyName !== 'transform') return;
+    const n = speakerImages.length;
+    // Re-center on the middle copy after reaching either edge, without a visible jump.
+    if(activeTrackIndex >= n * 2 || activeTrackIndex < n){
+      activeTrackIndex = n + ((activeTrackIndex % n) + n) % n;
+      updateSpeakerClasses();
+      moveTrack(false);
+    }
+    isAnimating = false;
+  });
+
+  function startSpeakerTimer(){
+    clearInterval(speakerTimer);
+    speakerTimer = setInterval(() => changeSpeaker(1), 3500);
+  }
+  function restartSpeakerTimer(){ startSpeakerTimer(); }
+
+  function preloadSpeakerImages(){
+    speakerImagesFixed.forEach(url => {
+      const img = new Image();
+      img.decoding = 'async';
+      img.src = url;
+    });
+  }
+
+  function loadSpeakerImages(){
+    speakerImages = [...speakerImagesFixed];
+
+    /* Preload the fixed raw GitHub URLs before building the slider. */
+    preloadSpeakerImages();
+
+    buildTrack();
+    startSpeakerTimer();
+  }
+
+  document.getElementById('speakerPrev')?.addEventListener('click', () => changeSpeaker(-1));
+  document.getElementById('speakerNext')?.addEventListener('click', () => changeSpeaker(1));
+
+  const speakerSlider = document.querySelector('.speakers-slider');
+  speakerSlider?.addEventListener('mouseenter', () => clearInterval(speakerTimer));
+  speakerSlider?.addEventListener('mouseleave', startSpeakerTimer);
+
+  /* Touch / trackpad swipe: every speaker can be brought to the center. */
+  let touchStartX = null;
+  speakerSlider?.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    clearInterval(speakerTimer);
+  }, {passive:true});
+  speakerSlider?.addEventListener('touchend', e => {
+    if(touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+    if(Math.abs(dx) > 35) changeSpeaker(dx < 0 ? 1 : -1);
+    startSpeakerTimer();
+  }, {passive:true});
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      updateSpeakerClasses();
+      moveTrack(false);
+    }, 80);
+  });
+
+  loadSpeakerImages();
+
+</script>
+
+</body>
+</html>
