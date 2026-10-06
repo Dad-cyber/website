@@ -392,6 +392,9 @@ body{
 }
 .sponsor-name{font-size:9px;font-weight:700;color:#c4d1dc}
 
+.sponsors-soon{display:inline-block;margin:-8px 0 18px;padding:5px 16px;border:1px solid rgba(255,210,145,.45);border-radius:999px;background:rgba(255,155,56,.10);color:var(--sun-light);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.sponsor-name{font-size:13px}
+
 /* ── FOOTER ── */
 .footer{
   background:#020f1f;color:white;
@@ -497,7 +500,7 @@ body{
 .speakers-carousel-wrap{width:100%;overflow:hidden;position:relative;padding:8px 0 12px}
 .speakers-carousel{display:flex;flex-wrap:nowrap;align-items:stretch;gap:16px;width:100%;will-change:transform;transition:transform .65s cubic-bezier(.22,.61,.36,1)}
 /* Every speaker card is identical. No center-card highlighting or scaling. */
-.speaker-item{flex:0 0 calc((100% - 48px)/4);width:calc((100% - 48px)/4);height:clamp(245px,22vw,315px);text-align:center;user-select:none;cursor:pointer;opacity:1;transform:none;outline:none;filter:none}
+.speaker-item{flex:0 0 calc((100% - 48px)/4);width:calc((100% - 48px)/4);height:clamp(305px,23vw,345px);text-align:center;user-select:none;cursor:pointer;opacity:1;transform:none;outline:none;filter:none}
 .speaker-item.speaker-near,.speaker-item.speaker-center{opacity:1;transform:none;filter:none;z-index:auto}
 .speaker-card-inner{width:100%;height:100%;min-height:0;padding:clamp(14px,1.5vw,20px) clamp(10px,1.2vw,16px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;border:1px solid rgba(255,255,255,.15);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:0 10px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .25s ease,background .25s ease,box-shadow .25s ease}
 .speaker-item:hover .speaker-card-inner{border-color:rgba(255,210,145,.30);background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035))}
@@ -505,31 +508,30 @@ body{
 .speaker-photo-ring{width:clamp(90px,8vw,125px);height:clamp(90px,8vw,125px);flex:0 0 auto;margin:0 auto clamp(10px,1vw,14px);padding:3px;border-radius:50%;background:linear-gradient(135deg,rgba(255,184,100,.62),rgba(110,212,232,.55));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 24px rgba(0,0,0,.25)}
 .speaker-center .speaker-photo-ring{width:clamp(90px,8vw,125px);height:clamp(90px,8vw,125px);padding:3px;margin-bottom:clamp(10px,1vw,14px);background:linear-gradient(135deg,rgba(255,184,100,.62),rgba(110,212,232,.55));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 24px rgba(0,0,0,.25)}
 .speaker-photo{width:100%;height:100%;display:block;object-fit:cover;object-position:center;border-radius:50%;border:3px solid rgba(4,23,45,.92);background:#102b43}
-.speaker-name{width:100%;color:#fff;font-size:clamp(10px,1vw,14px);font-weight:800;line-height:1.25;min-height:35px}
-.speaker-center .speaker-name{font-size:clamp(10px,1vw,14px);min-height:35px}
-.speaker-dept{width:100%;color:var(--cyan);font-size:clamp(7px,.62vw,9px);font-weight:700;line-height:1.35;margin-top:4px}
-.speaker-center .speaker-dept{font-size:clamp(7px,.62vw,9px);margin-top:4px}
-.speaker-college{width:100%;color:#d8e5ef;font-size:clamp(7px,.68vw,10px);font-weight:700;line-height:1.3;margin-top:5px;min-height:25px}
-.speaker-country{width:100%;color:#ffd18b;font-size:clamp(7px,.62vw,9px);font-weight:800;line-height:1.25;margin-top:3px;letter-spacing:.15px}
-.speaker-center .speaker-college{font-size:clamp(7px,.68vw,10px);margin-top:5px}
-.speaker-center .speaker-country{font-size:clamp(7px,.62vw,9px);margin-top:3px}
+.speaker-name,.speaker-center .speaker-name{width:100%;color:#fff;font-size:clamp(15px,1.3vw,19px);font-weight:700;line-height:1.3;min-height:2.6em;display:flex;align-items:center;justify-content:center;letter-spacing:.1px}
+.speaker-dept,.speaker-center .speaker-dept{width:100%;color:var(--cyan);font-size:clamp(12px,.9vw,14px);font-weight:700;line-height:1.35;margin-top:4px}
+.speaker-college,.speaker-center .speaker-college{width:100%;color:#d8e5ef;font-size:clamp(13px,1.05vw,16px);font-weight:600;line-height:1.4;margin-top:8px;min-height:2.8em}
+.speaker-country,.speaker-center .speaker-country{width:100%;color:#ffd18b;font-size:clamp(12px,.95vw,15px);font-weight:700;line-height:1.4;margin-top:8px;letter-spacing:.14em;text-transform:uppercase}
+.speaker-country::before{content:"";display:block;width:30px;height:2px;margin:0 auto 9px;border-radius:2px;background:linear-gradient(90deg,var(--sun),var(--cyan))}
 .speaker-arrow{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:rgba(255,255,255,.07);color:#fff;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:8;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.25s ease}
 .speaker-arrow:hover{background:rgba(255,166,75,.18);border-color:rgba(255,210,145,.55);color:#ffd18b;transform:translateY(-50%) scale(1.08)}
 .speaker-arrow.prev{left:4px}.speaker-arrow.next{right:4px}
-.speaker-loading,.speaker-error{width:100%;text-align:center;color:#9fb3c5;font-size:9px;padding:25px 10px}
+.speaker-loading,.speaker-error{width:100%;text-align:center;color:#9fb3c5;font-size:13px;padding:25px 10px}
 @media (max-width:900px){
   .speakers-section{width:90%}.speakers-slider{padding-left:0;padding-right:0}.speakers-carousel{gap:10px}
-  .speaker-item{flex-basis:calc((100% - 20px)/3);width:calc((100% - 20px)/3);height:clamp(220px,31vw,285px)}
+  .speaker-item{flex-basis:calc((100% - 20px)/3);width:calc((100% - 20px)/3);height:clamp(305px,36vw,335px)}
   .speaker-photo-ring,.speaker-center .speaker-photo-ring{width:clamp(75px,11vw,100px);height:clamp(75px,11vw,100px)}
 }
 @media (max-width:680px){
-  .speakers-section{width:90%;padding:28px 0 25px}.speakers-heading h2{font-size:21px}.speakers-heading p{font-size:9px}.speakers-slider{padding:5px 0 8px}.speakers-carousel{gap:7px}
-  .speaker-item{flex-basis:calc((100% - 14px)/3);width:calc((100% - 14px)/3);height:clamp(180px,43vw,235px)}
-  .speaker-card-inner{padding:9px 5px;border-radius:15px}.speaker-photo-ring,.speaker-center .speaker-photo-ring{width:clamp(55px,17vw,78px);height:clamp(55px,17vw,78px);margin-bottom:7px}
-  .speaker-name,.speaker-center .speaker-name{font-size:clamp(7px,2vw,10px);min-height:24px}.speaker-dept,.speaker-center .speaker-dept{font-size:clamp(5px,1.5vw,7px);margin-top:2px}.speaker-college,.speaker-center .speaker-college{font-size:clamp(5.5px,1.65vw,7.5px);margin-top:3px;min-height:20px}.speaker-country,.speaker-center .speaker-country{font-size:clamp(5px,1.5vw,7px);margin-top:2px}
+  .speakers-section{width:92%;padding:28px 0 25px}.speakers-heading h2{font-size:21px}.speakers-heading p{font-size:12px}.speakers-slider{padding:5px 0 8px}.speakers-carousel{gap:10px}
+  .speaker-item{flex-basis:calc((100% - 10px)/2);width:calc((100% - 10px)/2);height:clamp(285px,76vw,320px)}
+  .speaker-card-inner{padding:14px 8px;border-radius:16px}.speaker-photo-ring,.speaker-center .speaker-photo-ring{width:clamp(72px,22vw,92px);height:clamp(72px,22vw,92px);margin-bottom:10px}
+  .speaker-name,.speaker-center .speaker-name{font-size:clamp(13px,3.7vw,15px)}
+  .speaker-college,.speaker-center .speaker-college{font-size:clamp(11.5px,3.2vw,13px);min-height:4.2em}
+  .speaker-country,.speaker-center .speaker-country{font-size:clamp(10.5px,2.9vw,12px)}
 }
 @media (max-width:400px){
-  .speaker-item{flex-basis:calc((100% - 14px)/3);width:calc((100% - 14px)/3);height:clamp(165px,47vw,205px)}.speaker-card-inner{padding:7px 3px}.speaker-photo-ring,.speaker-center .speaker-photo-ring{width:clamp(48px,17vw,65px);height:clamp(48px,17vw,65px)}.speaker-arrow{width:27px;height:27px;font-size:15px}
+  .speaker-item{height:clamp(285px,78vw,310px)}.speaker-card-inner{padding:12px 6px}.speaker-arrow{width:27px;height:27px;font-size:15px}
 }
 /* Global fluid sizing for remaining sections */
 .info-section{width:100%;padding:clamp(22px,3vw,40px) clamp(4%,5vw,7%)}
@@ -773,15 +775,16 @@ body{
 <section class="sponsors">
   <div class="sponsors-label">Our Partners</div>
   <h2>Sponsors &amp; Partners</h2>
+  <p class="sponsors-soon">Coming Soon</p>
   <div class="sponsor-grid">
-    <div class="sponsor"><span class="sponsor-name">Thermo Fisher</span></div>
-    <div class="sponsor"><span class="sponsor-name">BD</span></div>
-    <div class="sponsor"><span class="sponsor-name">Agilent</span></div>
-    <div class="sponsor"><span class="sponsor-name">Nanostring</span></div>
-    <div class="sponsor"><span class="sponsor-name">ZEISS</span></div>
-    <div class="sponsor"><span class="sponsor-name">QIAGEN</span></div>
-    <div class="sponsor"><span class="sponsor-name">MERCK</span></div>
-    <div class="sponsor"><span class="sponsor-name">TECAN</span></div>
+    <div class="sponsor"><span class="sponsor-name">1</span></div>
+    <div class="sponsor"><span class="sponsor-name">2</span></div>
+    <div class="sponsor"><span class="sponsor-name">3</span></div>
+    <div class="sponsor"><span class="sponsor-name">4</span></div>
+    <div class="sponsor"><span class="sponsor-name">5</span></div>
+    <div class="sponsor"><span class="sponsor-name">6</span></div>
+    <div class="sponsor"><span class="sponsor-name">7</span></div>
+    <div class="sponsor"><span class="sponsor-name">8</span></div>
   </div>
 </section>
 
@@ -994,7 +997,7 @@ body{
   }
 
   function visibleSpeakerCount(){
-    return window.innerWidth <= 900 ? 3 : 4;
+    return window.innerWidth <= 680 ? 2 : (window.innerWidth <= 900 ? 3 : 4);
   }
 
   function changeSpeaker(step){
