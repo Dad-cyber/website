@@ -3,11 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="canonical" href="/attendees/registration/">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="color-scheme" content="dark">
-<title>BIO-CHIP 2027 | Registration</title>
+<title>BIO-CHIP 2027 | Accommodation</title>
 <style>
 
 /* =========================================================
@@ -377,7 +373,7 @@ body{
   <nav class="nav">
     <a href="/">Home</a>
     <div class="dropdown">
-      <button type="button" class="dropdown-trigger" aria-expanded="false" onclick="toggleDropdown(this)">Authors ▾</button>
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Authors ▾</button>
       <div class="dropdown-menu">
         <a href="/authors/">Call for Abstracts</a>
         <a href="/authors/">Abstract Submission</a>
@@ -386,7 +382,7 @@ body{
       </div>
     </div>
     <div class="dropdown">
-      <button type="button" class="dropdown-trigger" aria-expanded="false" onclick="toggleDropdown(this)">Attendees ▾</button>
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Attendees ▾</button>
       <div class="dropdown-menu">
         <a href="/attendees/registration/">Registration</a>
         <a href="/attendees/accommodation/">Accommodation</a>
@@ -395,7 +391,7 @@ body{
       </div>
     </div>
     <div class="dropdown">
-      <button type="button" class="dropdown-trigger" aria-expanded="false" onclick="toggleDropdown(this)">Program ▾</button>
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Program ▾</button>
       <div class="dropdown-menu">
         <a href="/program/">Program Overview</a>
         <a href="/program/">Plenary Sessions</a>
@@ -404,7 +400,7 @@ body{
       </div>
     </div>
     <div class="dropdown">
-      <button type="button" class="dropdown-trigger" aria-expanded="false" onclick="toggleDropdown(this)">Exhibitors ▾</button>
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Exhibitors ▾</button>
       <div class="dropdown-menu">
         <a href="/exhibitors/">Exhibition</a>
         <a href="/exhibitors/">Sponsors</a>
@@ -412,7 +408,7 @@ body{
       </div>
     </div>
     <div class="dropdown">
-      <button type="button" class="dropdown-trigger" aria-expanded="false" onclick="toggleDropdown(this)">Conference ▾</button>
+      <button class="dropdown-trigger" onclick="toggleDropdown(this)">Conference ▾</button>
       <div class="dropdown-menu">
         <a href="/conference/about/">About</a>
         <a href="/conference/committee/">Organizing Committee</a>
@@ -424,7 +420,7 @@ body{
   </nav>
 
   <!-- Hamburger button (mobile only) -->
-  <button type="button" class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
     <span></span>
     <span></span>
     <span></span>
@@ -432,7 +428,7 @@ body{
 </header>
 
 <!-- Mobile nav drawer -->
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+<div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-inner">
 
     <a href="/" class="mobile-top-link">Home</a>
@@ -499,7 +495,7 @@ body{
     <a href="/attendees/registration/" class="mobile-register">Register Now →</a>
 
   </div>
-</nav>
+</div>
 
 
 <!-- PAGE CONTENT -->
@@ -520,7 +516,7 @@ body{
       <div class="footer-circle">BIO-CHIP</div>
       <div>
         <strong>BIO-CHIP 2027</strong>
-        <p>International Conference Cum Workshop on Bio-Chip & Organ-On-Chip</p>
+        <p>International Conference Cum Workshop on Bio-Chip</p>
       </div>
     </div>
     <div class="footer-links">
@@ -553,8 +549,6 @@ body{
   btn.addEventListener('click', function() {
     const isOpen = drawer.classList.toggle('open');
     btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
@@ -562,8 +556,6 @@ body{
     link.addEventListener('click', function() {
       drawer.classList.remove('open');
       btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('aria-label', 'Open menu');
       document.body.style.overflow = '';
     });
   });
@@ -582,15 +574,10 @@ body{
     const isOpen = menu.classList.contains('open');
     closeAllDropdowns();
     if (!isOpen) menu.classList.add('open');
-    trigger.setAttribute('aria-expanded', String(!isOpen));
   }
 
   function closeAllDropdowns() {
-    document.querySelectorAll('.dropdown-menu.open').forEach(m => {
-      m.classList.remove('open');
-      const trigger = m.previousElementSibling;
-      if (trigger) trigger.setAttribute('aria-expanded', 'false');
-    });
+    document.querySelectorAll('.dropdown-menu.open').forEach(m => m.classList.remove('open'));
   }
 
   /* Close dropdown when clicking/tapping anywhere outside */
