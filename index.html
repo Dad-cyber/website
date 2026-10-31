@@ -311,7 +311,47 @@ body{
   padding:clamp(9px,.7vw,13px) clamp(15px,1.3vw,22px);
   border-radius:9px;font-size:clamp(10px,1.5vw,13px);
   font-weight:700;transition:.25s ease}
-.hero-action.primary{background:linear-gradient(135deg,#ff9a35,#d9651f);color:#fff;border:1px solid rgba(255,224,174,.45);box-shadow:0 7px 22px rgba(217,101,31,.28)}.hero-action.primary:hover{transform:translateY(-2px)}.hero-action.secondary{color:#fff;border:1px solid rgba(255,255,255,.52);background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.hero-action.secondary:hover{background:rgba(255,255,255,.16);border-color:#fff}@media (max-width:1100px){.hero-content{left:5%;width:92%;height:70%;top:51%}.hero-conference{font-size:clamp(13px,2.2vw,25px)}}@media (max-width:900px){.hero{min-height:540px;aspect-ratio:auto}.hero-content{left:5%;width:90%;height:70%;top:52%}.hero-conference{font-size:clamp(12px,2.8vw,22px)}.hero-brand{font-size:clamp(44px,9vw,76px)}}@media (max-width:700px){.hero{min-height:500px}.hero-content{left:5%;width:90%;height:70%;top:51%}.hero-conference{font-size:clamp(9px,2.8vw,16px);letter-spacing:0}.hero-institution{font-size:clamp(10px,2.8vw,15px)}.hero-date{font-size:clamp(10px,3vw,16px)}.hero-city,.hero-country{font-size:clamp(14px,4.2vw,23px)}.hero-brand{font-size:clamp(38px,12vw,68px)}.hero-actions{gap:8px}}@media (max-width:400px){.hero{min-height:460px}.hero-content{left:5%;width:90%;height:70%;top:50%}.hero-conference{font-size:9px;line-height:1.1}.hero-institution{font-size:10px;line-height:1.25}.hero-date{font-size:9px}.hero-city,.hero-country{font-size:15px}.hero-brand{font-size:clamp(34px,12.5vw,52px)}.hero-actions{gap:6px}.hero-action{padding:8px 10px;font-size:9px}}
+.hero-action.primary{background:linear-gradient(135deg,#ff9a35,#d9651f);color:#fff;border:1px solid rgba(255,224,174,.45);box-shadow:0 7px 22px rgba(217,101,31,.28)}.hero-action.primary:hover{transform:translateY(-2px)}.hero-action.secondary{color:#fff;border:1px solid rgba(255,255,255,.52);background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.hero-action.secondary:hover{background:rgba(255,255,255,.16);border-color:#fff}
+
+/* Workshop registration note (below hero buttons) */
+.hero-workshop{
+  display:flex;align-items:center;gap:clamp(12px,1.6vw,22px);
+  margin-top:clamp(14px,1.6vw,22px);
+  max-width:760px;
+  padding:clamp(10px,1vw,14px) clamp(12px,1.2vw,18px);
+  border:1px solid rgba(255,210,145,.35);
+  border-left:3px solid var(--sun);
+  border-radius:10px;
+  background:rgba(7,27,48,.55);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.hero-workshop-title{
+  font-size:clamp(11px,1.1vw,14px);
+  font-weight:800;
+  color:var(--sun-light);
+  margin-bottom:4px;
+}
+.hero-workshop-text{
+  font-size:clamp(11px,1.05vw,14px);
+  line-height:1.55;
+  color:#e8f1f8;
+}
+.hero-workshop-text strong{color:#fff}
+.hero-workshop-info{flex:1;min-width:0}
+.hero-workshop-btn{flex:none;display:inline-block;text-decoration:none;white-space:nowrap;padding:clamp(9px,.7vw,12px) clamp(14px,1.2vw,20px);border-radius:9px;font-size:clamp(10px,1.5vw,13px);font-weight:700;color:#032033;background:linear-gradient(135deg,#6ed4e8,#2fa8c4);border:1px solid rgba(190,240,250,.55);box-shadow:0 7px 22px rgba(47,168,196,.28);transition:.25s ease}
+.hero-workshop-btn:hover{transform:translateY(-2px);background:linear-gradient(135deg,#8fe0ef,#43bad6)}
+
+@media (max-width:1100px){.hero-content{left:5%;width:92%;height:70%;top:51%}.hero-conference{font-size:clamp(13px,2.2vw,25px)}}@media (max-width:900px){.hero{min-height:540px;aspect-ratio:auto}.hero-content{left:5%;width:90%;height:70%;top:52%}.hero-conference{font-size:clamp(12px,2.8vw,22px)}.hero-brand{font-size:clamp(44px,9vw,76px)}}@media (max-width:700px){.hero{min-height:560px}.hero-content{left:5%;width:90%;height:70%;top:51%}.hero-conference{font-size:clamp(9px,2.8vw,16px);letter-spacing:0}.hero-institution{font-size:clamp(10px,2.8vw,15px)}.hero-date{font-size:clamp(10px,3vw,16px)}.hero-city,.hero-country{font-size:clamp(14px,4.2vw,23px)}.hero-brand{font-size:clamp(38px,12vw,68px)}.hero-actions{gap:8px}.hero-workshop{max-width:100%;flex-direction:column;align-items:flex-start}}@media (max-width:400px){.hero{min-height:520px}.hero-content{left:5%;width:90%;height:70%;top:50%}.hero-conference{font-size:9px;line-height:1.1}.hero-institution{font-size:10px;line-height:1.25}.hero-date{font-size:9px}.hero-city,.hero-country{font-size:15px}.hero-brand{font-size:clamp(34px,12.5vw,52px)}.hero-actions{gap:6px}.hero-action{padding:8px 10px;font-size:9px}}
+
+/* Hero layout fix: content flows normally so the hero grows with its content
+   and never slides behind the sticky header (overrides the absolute positioning above). */
+.hero{display:flex;align-items:center;aspect-ratio:auto;min-height:clamp(420px,34vw,600px);padding:clamp(36px,4.5vw,72px) 0}
+.hero-content{position:relative;left:auto;top:auto;transform:none;height:auto;width:min(90%,1100px);margin-left:clamp(4%,5vw,7%)}
+@media (max-width:900px){.hero{min-height:0;padding:36px 0 44px}.hero-content{width:90%;margin-left:5%;left:auto;top:auto;height:auto}}
+@media (max-width:700px){.hero{min-height:0}.hero-content{left:auto;top:auto;height:auto}}
+@media (max-width:400px){.hero{min-height:0;padding:30px 0 36px}.hero-content{left:auto;top:auto;height:auto}}
+
 /* ── GLASS INFO CARDS ── */
 .info-section{
   max-width:1200px;margin:auto;padding:25px 4%;
@@ -712,6 +752,17 @@ body{
     <div class="hero-country"></div>
     <div class="hero-brand"><span class="bio-loc">BIO-CHIP</span><span class="year"> 2027</span></div>
     <div class="hero-actions"><a href="/attendees/registration/" class="hero-action primary">Register Now</a><a href="/authors/" class="hero-action secondary">Submit Request</a></div>
+    <div class="hero-workshop">
+      <div class="hero-workshop-info">
+        <div class="hero-workshop-title">Workshop registration</div>
+        <div class="hero-workshop-text">
+          The hands-on workshop will be held on <strong>25 &amp; 26 August 2027</strong>.
+          Seats are limited to <strong>40 participants</strong> and are allotted on a
+          <strong>first come, first served</strong> basis.
+        </div>
+      </div>
+      <a href="/attendees/registration/" class="hero-workshop-btn">Register Now</a>
+    </div>
   </div>
 </section>
 
