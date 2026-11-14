@@ -341,14 +341,43 @@ body{
 .active-page{color:#ffd18b!important}
 
 /* =====================================================
-   COMING SOON PAGE
+   ORGANIZING COMMITTEE
    ===================================================== */
-.coming-soon-page{min-height:calc(100vh - 160px);display:flex;align-items:center;justify-content:center;padding:80px 5%;text-align:center}
-.coming-soon-card{width:min(760px,100%);padding:70px 40px;border:1px solid rgba(255,255,255,.18);border-radius:28px;background:rgba(7,27,48,.55);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 20px 60px rgba(0,0,0,.25)}
-.coming-soon-card .eyebrow{color:var(--sun-light);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
-.coming-soon-card h1{font-size:clamp(36px,6vw,64px);margin-bottom:18px}
-.coming-soon-card p{color:var(--muted);font-size:clamp(16px,2vw,20px);line-height:1.7}
-.coming-soon-card .dot{width:10px;height:10px;border-radius:50%;background:var(--cyan);display:inline-block;margin-right:8px;box-shadow:0 0 18px rgba(110,212,232,.7)}
+.committee-page{width:min(1180px,92%);margin:0 auto;padding:40px 0 56px}
+.committee-intro{text-align:center;margin-bottom:26px}
+.committee-intro .eyebrow{color:var(--sun-light);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+.committee-intro h1{font-size:clamp(26px,3.6vw,38px);line-height:1.15;margin-bottom:8px}
+.committee-intro p{color:var(--muted);font-size:15px;line-height:1.5}
+.committee-group{margin-top:26px}
+.committee-group h2{font-size:clamp(19px,2.2vw,23px);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.18);color:#fff}
+.committee-grid{display:grid;gap:14px}
+.committee-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.committee-grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.committee-card{display:flex;align-items:center;gap:14px;text-align:left;overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(7,27,48,.55));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 10px 26px rgba(0,0,0,.2);padding:12px 14px;transition:transform .25s ease,border-color .25s ease}
+.committee-card:hover{transform:translateY(-3px);border-color:rgba(255,209,139,.55)}
+.committee-photo{flex:0 0 76px;width:76px;height:76px;object-fit:cover;object-position:center 25%;border-radius:10px;background:rgba(255,255,255,.08);display:block}
+.committee-info{min-width:0}
+.committee-card h3{font-size:16px;line-height:1.3;margin-bottom:3px;color:#fff}
+.committee-card .institution{font-size:13px;line-height:1.4;color:#d4e0e9}
+.committee-card .country{font-size:12px;color:var(--sun-light);margin-top:3px}
+
+/* Tablet: international drops to 2 columns */
+@media(max-width:1000px){.committee-grid.cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Small tablet / large phone: single column */
+@media(max-width:640px){
+  .committee-page{padding:28px 0 40px}
+  .committee-intro{margin-bottom:18px}
+  .committee-group{margin-top:20px}
+  .committee-grid.cols-2,.committee-grid.cols-3{grid-template-columns:1fr;gap:10px}
+  .committee-card{padding:10px 12px}
+}
+/* Small phones */
+@media(max-width:400px){
+  .committee-card{gap:10px}
+  .committee-photo{flex-basis:62px;width:62px;height:62px}
+  .committee-card h3{font-size:15px}
+  .committee-card .institution{font-size:12px}
+}
 
 </style>
 </head>
@@ -362,7 +391,7 @@ body{
 
   <div class="header-divider"></div>
   <div class="event-details">
-    <strong>International Conference Cum Workshop on Bio-chip</strong>
+    <strong>International Conference Cum Workshop on Micro-Systems & Bio-chip</strong>
   </div>
   <div class="header-divider"></div>
   <div class="event-details">
@@ -500,12 +529,63 @@ body{
 
 
 <!-- PAGE CONTENT -->
-<main class="coming-soon-page">
-  <section class="coming-soon-card">
-    <div class="eyebrow">BIO-CHIP 2027</div>
+<main class="committee-page">
+  <section class="committee-intro">
+    <div class="eyebrow">MICRO-SYSTEMS & BIO-CHIP 2027</div>
     <h1>Organizing Committee</h1>
-    <p><span class="dot"></span>Coming Soon</p>
-    <p style="margin-top:12px">This organizing committee page is currently being prepared. Please check back soon for updates.</p>
+    <p>Meet the national and international members supporting the conference.</p>
+  </section>
+
+  <section class="committee-group" aria-labelledby="national-title">
+    <h2 id="national-title">National Committee</h2>
+    <div class="committee-grid cols-2">
+      <article class="committee-card">
+        <img class="committee-photo" src="https://raw.githubusercontent.com/Dad-cyber/website/main/web_photos/speaker1.jpg" alt="Dr. Tuhin Subhra Santra" loading="lazy">
+        <div class="committee-info">
+          <h3>Dr. Tuhin Subhra Santra</h3>
+          <p class="institution">Indian Institute of Technology Madras</p>
+          <p class="country">India</p>
+        </div>
+      </article>
+      <article class="committee-card">
+        <img class="committee-photo" src="https://raw.githubusercontent.com/Dad-cyber/website/main/web_photos/speakerc.jpg" alt="Sarabani Kar" loading="lazy">
+        <div class="committee-info">
+          <h3>Sarabani Kar</h3>
+          <p class="institution">Institution to be updated</p>
+          <p class="country">Country to be updated</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="committee-group" aria-labelledby="international-title">
+    <h2 id="international-title">International Committee</h2>
+    <div class="committee-grid cols-3">
+      <article class="committee-card">
+        <img class="committee-photo" src="https://raw.githubusercontent.com/Dad-cyber/website/main/web_photos/speaker2.jpg" alt="Dr. Fan-Gang Tseng" loading="lazy">
+        <div class="committee-info">
+          <h3>Dr. Fan-Gang Tseng</h3>
+          <p class="institution">National Tsing Hua University</p>
+          <p class="country">Taiwan</p>
+        </div>
+      </article>
+      <article class="committee-card">
+        <img class="committee-photo" src="https://raw.githubusercontent.com/Dad-cyber/website/main/web_photos/speaker3.jpg" alt="Dr. Zong-Hong Lin" loading="lazy">
+        <div class="committee-info">
+          <h3>Dr. Zong-Hong Lin</h3>
+          <p class="institution">National Taiwan University</p>
+          <p class="country">Taiwan</p>
+        </div>
+      </article>
+      <article class="committee-card">
+        <img class="committee-photo" src="https://raw.githubusercontent.com/Dad-cyber/website/main/web_photos/speaker5.jpg" alt="Dr. Moeto Nagai" loading="lazy">
+        <div class="committee-info">
+          <h3>Dr. Moeto Nagai</h3>
+          <p class="institution">Toyohashi University of Technology</p>
+          <p class="country">Japan</p>
+        </div>
+      </article>
+    </div>
   </section>
 </main>
 
